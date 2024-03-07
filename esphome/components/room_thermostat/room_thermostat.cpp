@@ -6,7 +6,7 @@ namespace esphome {
 namespace room_thermostat {
 
 void RoomThermostat::setup(){
-    pinMode(5, OUTPUT);
+    pinMode(2, OUTPUT);
 
 }
 
