@@ -12,7 +12,7 @@ void RoomThermostat::setup(){
 
 void RoomThermostat::update() {
     self->state_ != self->state_;
-    digital_write(5, self->state_);
+    digital_write(2, self->state_);
 }
 
 }  // namespace room_thermostat
