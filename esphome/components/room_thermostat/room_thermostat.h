@@ -7,7 +7,7 @@
 namespace esphome {
 namespace room_thermostat {
 
-class RoomThermostat : public PollingComponent {
+class RoomThermostat : public sensor::Sensor, public PollingComponent {
 public:
     void setup() override;
     void update() override;
