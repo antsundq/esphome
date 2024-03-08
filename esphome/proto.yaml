@@ -1,0 +1,41 @@
+esphome:
+  name: esphome-web-e47db4
+  friendly_name: Proto
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "4mOCHRSaTyeHJNr7jpB/KRqZ2UNFmsHWZn6DqAR4VGM="
+
+ota:
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Web-E47Db4"
+    password: "8E6K4O2BZIW0"
+
+sensor:
+  - platform: room_thermostat
+    pin: GPIO2
+
+external_components:
+  - source:
+      type: local
+      path: components
+    components: [ room_thermostat ]
+  # equivalent shorthand for GitHub
+  #- source: github://antsundq/esphome@esp32-room-thermostat
+  #  components: [ room_thermostat ]

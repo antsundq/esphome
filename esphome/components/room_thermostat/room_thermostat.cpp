@@ -6,14 +6,13 @@ namespace esphome {
 namespace room_thermostat {
 
 void RoomThermostat::setup(){
-    self->state_=false;
-    pinMode(2, OUTPUT);
-
+    this->state_=false;
+    this->pin_->setup();
 }
 
 void RoomThermostat::update() {
-    self->state_ != self->state_;
-    digitalWrite(2, HIGH);
+    this->state_ != this->state_;    
+    this->pin_->digital_write(this->state_);
 }
 
 }  // namespace room_thermostat
