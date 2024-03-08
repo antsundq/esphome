@@ -10,8 +10,11 @@ namespace room_thermostat {
 class RoomThermostat : public sensor::Sensor, public PollingComponent {
 public:
     void set_pin(GPIOPin *pin) { pin_ = pin; }
+    
     void setup() override;
     void update() override;
+
+  float get_setup_priority() const override { return setup_priority::HARDWARE; }
 
 protected:
   bool state_;
