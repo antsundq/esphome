@@ -30,6 +30,10 @@ wifi:
 sensor:
   - platform: room_thermostat
     pin: GPIO2
+    temperature:
+      name: "Living Room Temperature"
+    humidity:
+      name: "Living Room Humidity"
 
 external_components:
   - source:

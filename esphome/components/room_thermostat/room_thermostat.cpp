@@ -15,6 +15,10 @@ void RoomThermostat::setup(){
 void RoomThermostat::update() {
     this->state_ = !this->state_;    
     this->pin_->digital_write(this->state_);
+    if (this->temperature_sensor_ != nullptr)
+      this->temperature_sensor_->publish_state(23);
+    if (this->humidity_sensor_ != nullptr)
+      this->humidity_sensor_->publish_state(42);
 }
 
 }  // namespace room_thermostat
